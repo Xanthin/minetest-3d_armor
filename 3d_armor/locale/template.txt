@@ -1,0 +1,27 @@
+# Template
+
+Armor = 
+Level: %s = 
+Heal: %s = 
+Your %s got destroyed! = 
+
+Wood Helmet = 
+Steel Helmet = 
+Bronze Helmet = 
+Diamond Helmet = 
+Mithril Helmet = 
+Wood Chestplate = 
+Steel Chestplate = 
+Bronze Chestplate = 
+Diamond Chestplate = 
+Mithril Chestplate = 
+Wood Leggings = 
+Steel Leggings = 
+Bronze Leggings = 
+Diamond Leggings = 
+Mithril Leggings = 
+Wood Boots = 
+Steel Boots = 
+Bronze Boots = 
+Diamond Boots = 
+Mithril Boots = 
