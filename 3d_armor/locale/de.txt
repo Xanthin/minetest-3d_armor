@@ -1,0 +1,27 @@
+# Translation by Xanthin
+
+Armor = Ruestung
+Level: %s = Stufe: %s
+Heal: %s = Heilung: %s
+Your %s got destroyed! = Dein(e) %s wurde(n) zerstoert!
+
+Wood Helmet = Holzhelm
+Steel Helmet = Stahlhelm
+Bronze Helmet = Bronzehelm
+Diamond Helmet = Diamanthelm
+Mithril Helmet = Mithrilhelm
+Wood Chestplate = Holzbrustpanzer
+Steel Chestplate = Stahlbrustpanzer
+Bronze Chestplate = Bronzebrustpanzer
+Diamond Chestplate = Diamantbrustpanzer
+Mithril Chestplate = Mithrilbrustpanzer
+Wood Leggings = Holzbeinschutz
+Steel Leggings = Stahlbeinschutz
+Bronze Leggings = Bronzebeinschutz
+Diamond Leggings = Diamantbeinschutz
+Mithril Leggings = Mithrilbeinschutz
+Wood Boots = Holzstiefel
+Steel Boots = Stahlstiefel
+Bronze Boots = Bronzestiefel
+Diamond Boots = Diamantstiefel
+Mithril Boots = Mithrilstiefel
