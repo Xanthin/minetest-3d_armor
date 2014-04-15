@@ -1,3 +1,11 @@
+-- Boilerplate to support localized strings if intllib mod is installed.
+local S
+if intllib then
+	S = intllib.Getter()
+else
+	S = function(s) return s end
+end
+
 ARMOR_INIT_DELAY = 1
 ARMOR_INIT_TIMES = 1
 ARMOR_BONES_DELAY = 1
@@ -45,11 +53,11 @@ elseif unified_inventory then
 		get_formspec = function(player)
 			local name = player:get_player_name()
 			local formspec = "background[0.06,0.99;7.92,7.52;3d_armor_ui_form.png]"
-				.."label[0,0;Armor]"
+				.."label[0,0;"..S("Armor").."]"
 				.."list[detached:"..name.."_armor;armor;0,1;2,3;]"
 				.."image[2.5,0.75;2,4;"..armor.textures[name].preview.."]"
-				.."label[5,1;Level: "..armor.def[name].level.."]"
-				.."label[5,1.5;Heal:  "..armor.def[name].heal.."]"
+				.."label[5,1;"..S("Level: %s"):format(armor.def[name].level).."]"
+				.."label[5,1.5;"..S("Heal: %s"):format(armor.def[name].heal).."]"
 			return {formspec=formspec}
 		end,
 	})
@@ -189,7 +197,7 @@ armor.update_armor = function(self, player)
 				if stack:get_count() == 0 then
 					local desc = minetest.registered_items[item].description
 					if desc then
-						minetest.chat_send_player(name, "Your "..desc.." got destroyed!")
+						minetest.chat_send_player(name, S("Your %s got destroyed!"):format(desc))
 					end
 					self:set_player_armor(player)
 					armor:update_inventory(player)
