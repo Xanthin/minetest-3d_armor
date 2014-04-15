@@ -1,0 +1,7 @@
+# Template
+
+Wooden Shield = 
+Steel Shield = 
+Bronze Shield = 
+Diamond Shield = 
+Mithril Shield = 
