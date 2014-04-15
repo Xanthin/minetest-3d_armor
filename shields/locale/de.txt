@@ -1,0 +1,7 @@
+# Translation by Xanthin
+
+Wooden Shield = Holzschild
+Steel Shield = Stahlschild
+Bronze Shield = Bronzeschild
+Diamond Shield = Diamantschild
+Mithril Shield = Mithrilschild
