@@ -88,6 +88,9 @@ armor.set_player_armor = function(self, player)
 	end
 	local name = player:get_player_name()
 	local player_inv = player:get_inventory()
+	if not name or not player_inv then
+		return
+	end
 	local armor_texture = "3d_armor_trans.png"
 	local armor_level = 0
 	local armor_heal = 0
@@ -388,7 +391,6 @@ if ARMOR_DROP == true or ARMOR_DESTROY == true then
 		local name = player:get_player_name()
 		local pos = player:getpos()
 		if name and pos then
-			pos = vector.round(pos)
 			local drop = {}
 			local player_inv = player:get_inventory()
 			local armor_inv = minetest.get_inventory({type="detached", name=name.."_armor"})
@@ -401,10 +403,18 @@ if ARMOR_DROP == true or ARMOR_DESTROY == true then
 				end
 			end
 			armor:set_player_armor(player)
-			armor:update_inventory(player)
+			if unified_inventory then
+				unified_inventory.set_inventory_formspec(player, "craft")
+			elseif inventory_plus then
+				local formspec = inventory_plus.get_formspec(player,"main")
+				inventory_plus.set_inventory_formspec(player, formspec)
+			else
+				armor:update_inventory(player)
+			end
 			if ARMOR_DESTROY == false then
 				if minetest.get_modpath("bones") then
 					minetest.after(ARMOR_BONES_DELAY, function()
+						pos = vector.round(pos)
 						local node = minetest.get_node(pos)
 						if node.name == "bones:bones" then
 							local meta = minetest.get_meta(pos)
